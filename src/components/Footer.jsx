@@ -141,7 +141,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-cream/80 text-sm">
-              © 2024 Julie Bakers. All rights reserved. Made with ❤️ and lots of butter.
+              © 2026 Julie Bakers. All rights reserved. Made with ❤️ and lots of butter.
             </p>
             
             <div className="flex gap-6 text-sm">
