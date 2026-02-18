@@ -1,7 +1,7 @@
 export const galleryItems = [
   {
     id: 1,
-    image: "src/assets/gallery/Birthdays/birth1.jpeg",
+    image: "/gallery/Birthdays/birth1.jpeg",
     title: "Elegant 25th Birthday Cake",
     eventType: "birthday",
     flavor: "Chocolate Fudge",
@@ -19,7 +19,7 @@ export const galleryItems = [
   },
   {
     id: 3,
-    image: "src/assets/gallery/Birthdays/birth5.jpeg",
+    image: "/gallery/Birthdays/birth5.jpeg",
     title: "Golden Birthday Celebration",
     eventType: "birthday",
     flavor: "Oreo",
@@ -37,7 +37,7 @@ export const galleryItems = [
   },
   {
     id: 5,
-    image: "src/assets/gallery/Birthdays/birth6.jpeg",
+    image: "/gallery/Birthdays/birth6.jpeg",
     title: "Kids Birthday Wonder",
     eventType: "birthday",
     flavor: "Strawberry",
@@ -55,7 +55,7 @@ export const galleryItems = [
   },
   {
     id: 7,
-    image: "src/assets/gallery/Birthdays/birth4.jpeg",
+    image: "/gallery/Birthdays/birth4.jpeg",
     title: "Sophisticated Birthday Cake",
     eventType: "birthday",
     flavor: "Lemon Zest",
@@ -73,7 +73,7 @@ export const galleryItems = [
   },
   {
     id: 9,
-    image: "src/assets/gallery/Birthdays/birth2.jpeg",
+    image: "/gallery/Birthdays/birth2.jpeg",
     title: "Tropical Birthday Paradise",
     eventType: "birthday",
     flavor: "Pina Colada",
@@ -91,7 +91,7 @@ export const galleryItems = [
   },
   {
     id: 11,
-    image: "src/assets/gallery/Weddings/wed1.jpeg",
+    image: "/gallery/Weddings/wed1.jpeg",
     title: "Romantic Wedding Cake",
     eventType: "wedding",
     flavor: "Red Velvet",
@@ -109,7 +109,7 @@ export const galleryItems = [
   },
   {
     id: 13,
-    image: "src/assets/gallery/Graduations/grad1.jpeg",
+    image: "/gallery/Graduations/grad1.jpeg",
     title: "Graduation Achievement Cake",
     eventType: "graduation",
     flavor: "Chocolate",
@@ -118,7 +118,7 @@ export const galleryItems = [
   },
   {
     id: 14,
-    image: "src/assets/gallery/Graduations/grad4.jpeg",
+    image: "/gallery/Graduations/grad4.jpeg",
     title: "Success Graduation Celebration",
     eventType: "graduation",
     flavor: "Coffee",
@@ -127,7 +127,7 @@ export const galleryItems = [
   },
   {
     id: 15,
-    image: "src/assets/gallery/Graduations/grad2.jpeg",
+    image: "/gallery/Graduations/grad2.jpeg",
     title: "Scholar's Graduation Cake",
     eventType: "graduation",
     flavor: "Vanilla Mint",

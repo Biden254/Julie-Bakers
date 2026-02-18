@@ -120,7 +120,7 @@ const Home = () => {
                 </div>
                 <div className="relative">
                   <img 
-                    src="src/assets/gallery/Birthdays/birth3.jpeg"
+                    src="/gallery/Birthdays/birth3.jpeg"
                     alt="Birthday Cake"
                     className="w-full h-80 object-cover rounded-2xl shadow-luxury"
                   />

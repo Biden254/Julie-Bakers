@@ -4,7 +4,7 @@ const MonthlySpecialSection = () => {
   const monthlySpecial = {
     id: 1,
     name: "Valentine's Special",
-    image: "src/assets/gallery/Monthly/feb.jpg",
+    image: "/gallery/Monthly/feb.jpg",
     description: "Heart-shaped red velvet with cream cheese frosting and rose petals",
     originalPrice: 6800,
     specialPrice: 5500,
