@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { cakes } from '../data/cakes'
 import { cakeCategories } from '../data/cakeCategories'
+import { flavors } from '../data/flavors'
 import { generateWhatsAppMessage } from '../utils/generateWhatsAppMessage'
 import Footer from '../components/Footer'
 
@@ -17,6 +18,7 @@ const Order = () => {
     category: '',
     size: '',
     flavor: '',
+    weightInKg: '',
     deliveryType: 'pickup',
     address: '',
     dateNeeded: '',
@@ -24,6 +26,19 @@ const Order = () => {
     themeDescription: '',
     additionalNotes: ''
   })
+
+  // Calculate estimated price based on flavor and weight
+  const getEstimatedPrice = () => {
+    if (!formData.flavor || !formData.weightInKg) return null
+    
+    const selectedFlavor = flavors.find(f => f.name === formData.flavor)
+    if (!selectedFlavor) return null
+    
+    const weight = parseFloat(formData.weightInKg)
+    if (isNaN(weight) || weight <= 0) return null
+    
+    return selectedFlavor.pricePerKg * weight
+  }
 
   useEffect(() => {
     const cakeId = searchParams.get('cake')
@@ -53,7 +68,7 @@ const Order = () => {
       case 1:
         return formData.customerName && formData.customerPhone
       case 2:
-        return formData.size && formData.flavor
+        return formData.size && formData.flavor && formData.weightInKg
       case 3:
         return formData.dateNeeded && (formData.deliveryType === 'pickup' || formData.address)
       default:
@@ -186,6 +201,7 @@ const Order = () => {
               {selectedCategory && (
                 <>
                   <div>
+                  <div>
                     <label className="block text-brown font-medium mb-2">Size *</label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {selectedCategory.sizes.map(size => (
@@ -225,19 +241,47 @@ const Order = () => {
                     </div>
                   </div>
 
-                  {selectedCategory.requiresMessage && (
-                    <div>
-                      <label className="block text-brown font-medium mb-2">Message on Cake</label>
-                      <input
-                        type="text"
-                        name="messageOnCake"
-                        value={formData.messageOnCake}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-brown/20 rounded-xl focus:outline-none focus:border-brown transition-colors"
-                        placeholder="Enter your message"
-                      />
+                  <div>
+                    <label className="block text-brown font-medium mb-2">Weight (kg) *</label>
+                    <input
+                      type="number"
+                      name="weightInKg"
+                      value={formData.weightInKg}
+                      onChange={handleInputChange}
+                      step="0.1"
+                      min="0.5"
+                      max="10"
+                      className="w-full px-4 py-3 border border-brown/20 rounded-xl focus:outline-none focus:border-brown transition-colors"
+                      placeholder="Enter weight in kilograms"
+                    />
+                  </div>
+
+                  {/* Estimated Price Display */}
+                  {getEstimatedPrice() && (
+                    <div className="bg-gradient-to-r from-gold/10 to-rose/10 rounded-xl p-4 border border-gold/30">
+                      <div className="flex items-center justify-between">
+                        <span className="text-brown font-medium">Estimated Price:</span>
+                        <span className="text-2xl font-bold text-brown">
+                          Ksh {getEstimatedPrice().toLocaleString()}
+                        </span>
+                      </div>
                     </div>
                   )}
+                </div>
+
+                {selectedCategory.requiresMessage && (
+                  <div>
+                    <label className="block text-brown font-medium mb-2">Message on Cake</label>
+                    <input
+                      type="text"
+                      name="messageOnCake"
+                      value={formData.messageOnCake}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-brown/20 rounded-xl focus:outline-none focus:border-brown transition-colors"
+                      placeholder="Enter your message"
+                    />
+                  </div>
+                )}
 
                   {selectedCategory.requiresCustomTheme && (
                     <div>
@@ -420,7 +464,6 @@ const Order = () => {
             )}
           </div>
         </div>
-        
         <Footer />
       </div>
     </div>

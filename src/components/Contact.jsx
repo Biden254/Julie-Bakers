@@ -76,17 +76,21 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map Placeholder */}
+            {/* Interactive Google Map */}
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-soft">
-              <img 
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=300&fit=crop"
-                alt="Bakery Location"
-                className="w-full h-full object-cover"
+              <iframe
+                src="https://maps.app.goo.gl/pE4fdULN74qNDdWp8"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Julie Bakers Location"
+                className="w-full h-full"
               />
-              <div className="absolute inset-0 bg-brown/20 flex items-center justify-center">
-                <div className="bg-white/90 backdrop-blur px-6 py-3 rounded-full">
-                  <p className="text-brown font-medium">📍 Find us on Google Maps</p>
-                </div>
+              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-soft">
+                <p className="text-brown font-medium text-sm">📍 Nairobi, Kenya</p>
               </div>
             </div>
           </div>

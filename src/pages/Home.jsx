@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom'
 import Testimonials from '../components/Testimonials'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import GallerySection from '../components/GallerySection'
+import FlavorsPricingSection from '../components/FlavorsPricingSection'
+import MonthlySpecialSection from '../components/MonthlySpecialSection'
+import EnhancedCarousel from '../components/EnhancedCarousel'
 
 const Home = () => {
   return (
@@ -88,54 +92,46 @@ const Home = () => {
 
       {/* Featured Carousel */}
       <div className="mb-20">
-        <div className="relative bg-gradient-to-br from-rose/10 to-gold/10 rounded-3xl p-8 md:p-12">
-          <div className="grid md:grid-cols-3 gap-8 items-center">
-            <div className="md:col-span-2">
-              <div className="text-rose text-sm font-semibold uppercase tracking-wider mb-2">
-                Featured This Month
+        <EnhancedCarousel 
+          items={[
+            <div key="featured-1" className="relative bg-gradient-to-br from-rose/10 to-gold/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-rose text-sm font-semibold uppercase tracking-wider mb-2">
+                    Featured This Month
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Birthday Celebration
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Classic vanilla with colorful sprinkles, perfect for making any celebration special. 
+                    Our signature buttercream and moist cake layers create the perfect birthday experience.
+                  </p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-2xl font-bold text-brown">KES 6,200</span>
+                    <span className="text-brown/60">#gütclassic</span>
+                  </div>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="src/assets/gallery/Birthdays/birth3.jpeg"
+                    alt="Birthday Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    1/8
+                  </div>
+                </div>
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
-                Birthday Celebration
-              </h2>
-              <p className="text-brown/70 mb-6 leading-relaxed">
-                Classic vanilla with colorful sprinkles, perfect for making any celebration special. 
-                Our signature buttercream and moist cake layers create the perfect birthday experience.
-              </p>
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-2xl font-bold text-brown">KES 6,200</span>
-                <span className="text-brown/60">#gütclassic</span>
-              </div>
-              <Link 
-                to="/order" 
-                className="btn-primary"
-              >
-                Order Now
-              </Link>
             </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&h=400&fit=crop"
-                alt="Birthday Cake"
-                className="w-full h-80 object-cover rounded-2xl shadow-luxury"
-              />
-              <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
-                1/8
-              </div>
-            </div>
-          </div>
-          
-          {/* Carousel Arrows */}
-          <button className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur w-10 h-10 rounded-full flex items-center justify-center shadow-soft hover:bg-white transition-all duration-300">
-            <svg className="w-5 h-5 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur w-10 h-10 rounded-full flex items-center justify-center shadow-soft hover:bg-white transition-all duration-300">
-            <svg className="w-5 h-5 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+          ]}
+        />
       </div>
 
       {/* Additional Featured Items */}
@@ -166,7 +162,7 @@ const Home = () => {
         <div className="bg-white rounded-2xl shadow-soft overflow-hidden hover:shadow-luxury transition-all duration-300">
           <div className="relative h-48">
             <img 
-              src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop"
+              src="https://images.pexels.com/photos/25639473/pexels-photo-25639473.jpeg"
               alt="Salted Caramel"
               className="w-full h-full object-cover"
             />
@@ -189,7 +185,7 @@ const Home = () => {
         <div className="bg-white rounded-2xl shadow-soft overflow-hidden hover:shadow-luxury transition-all duration-300">
           <div className="relative h-48">
             <img 
-              src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop"
+              src="https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg"
               alt="Red Velvet"
               className="w-full h-full object-cover"
             />
@@ -210,12 +206,18 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Gallery Section */}
+      <GallerySection />
+
+      {/* Flavors & Pricing Section */}
+      <FlavorsPricingSection />
+
       {/* Create Your Own Section */}
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl text-brown mb-4">
-              Create Your Own Flavor
+              Create Your Own Cake
             </h2>
             <p className="text-lg text-brown/70 max-w-2xl mx-auto">
               Design your perfect cake with our custom ordering system
@@ -226,13 +228,10 @@ const Home = () => {
             <div className="text-center">
               <div className="relative mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300&h=300&fit=crop"
+                  src="https://images.pexels.com/photos/1727415/pexels-photo-1727415.jpeg"
                   alt="Custom Cake"
                   className="w-full h-64 object-cover rounded-2xl shadow-soft"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-gold text-white px-4 py-2 rounded-full text-sm font-semibold">
-                  ¡Quiero!
-                </div>
               </div>
               <h3 className="font-serif text-xl text-brown mb-2">Custom Designs</h3>
               <p className="text-brown/60">Personalized themes and decorations</p>
@@ -241,7 +240,7 @@ const Home = () => {
             <div className="text-center">
               <div className="mb-6">
                 <img 
-                  src="https://images.unsplash.com/photo-1612198914040-9a2e6d7eb3d9?w=300&h=300&fit=crop"
+                  src="https://images.unsplash.com/photo-1614601200252-996c1c26618b?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Premium Ingredients"
                   className="w-full h-64 object-cover rounded-2xl shadow-soft"
                 />
@@ -276,6 +275,9 @@ const Home = () => {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Monthly Special Section */}
+      <MonthlySpecialSection />
 
       {/* Contact Section */}
       <Contact />

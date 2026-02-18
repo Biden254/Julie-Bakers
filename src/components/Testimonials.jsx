@@ -2,7 +2,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Loren Deklerk",
+      name: "Loren D.",
       rating: 5,
       image: "https://images.unsplash.com/photo-1589635823089-774fca28fe13?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       shortQuote: "Amazing birthday cake!"
@@ -11,35 +11,35 @@ const Testimonials = () => {
       id: 2,
       name: "Michael R.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       shortQuote: "Best wedding cake ever!"
     },
     {
       id: 3,
-      name: "Jean Wendoh",
+      name: "Jean W.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.pexels.com/photos/2764975/pexels-photo-2764975.jpeg",
       shortQuote: "Simply perfect!"
     },
     {
       id: 4,
-      name: "David K.",
+      name: "Paul O.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1563721572772-fbf713fff374?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       shortQuote: "Incredible flavors!"
     },
     {
       id: 5,
       name: "Lisa T.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.pexels.com/photos/4654356/pexels-photo-4654356.jpeg",
       shortQuote: "Beautiful and delicious!"
     },
     {
       id: 6,
-      name: "James W.",
+      name: "Federika I.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       shortQuote: "Exceeded expectations!"
     }
   ]
