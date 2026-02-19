@@ -21,10 +21,7 @@ const GalleryCard = ({ item, onClick }) => {
         {/* Overlay on hover */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
         
-        {/* Quick info overlay */}
-        <div className={`absolute bottom-0 left-0 right-0 p-4 text-white transform transition-transform duration-500 ${isHovered ? 'translate-y-0' : 'translate-y-full'}`}>
-          <p className="text-sm font-medium opacity-90">{item.flavor} • {item.weightInKg}kg</p>
-        </div>
+        
       </div>
       
       {/* Content */}

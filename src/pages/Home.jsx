@@ -107,10 +107,6 @@ const Home = () => {
                     Classic vanilla with colorful sprinkles, perfect for making any celebration special. 
                     Our signature buttercream and moist cake layers create the perfect birthday experience.
                   </p>
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-2xl font-bold text-brown">KES 6,200</span>
-                    <span className="text-brown/60">#gütclassic</span>
-                  </div>
                   <Link 
                     to="/order" 
                     className="btn-primary"
@@ -125,11 +121,203 @@ const Home = () => {
                     className="w-full h-80 object-cover rounded-2xl shadow-luxury"
                   />
                   <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
-                    1/8
+                    1/7
                   </div>
                 </div>
               </div>
-            </div>
+            </div>,
+            <div key="featured-2" className="relative bg-gradient-to-br from-purple/10 to-pink/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-purple text-sm font-semibold uppercase tracking-wider mb-2">
+                    Wedding Special
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Elegant Wedding Cake
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Multi-tiered masterpiece with delicate sugar flowers and pearl accents. 
+                    The perfect centerpiece for your special day, crafted with premium ingredients.
+                  </p>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/gallery/Weddings/wed1.jpeg"
+                    alt="Wedding Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    2/7
+                  </div>
+                </div>
+              </div>
+            </div>,
+            <div key="featured-3" className="relative bg-gradient-to-br from-blue/10 to-cyan/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-blue text-sm font-semibold uppercase tracking-wider mb-2">
+                    Graduation Achievement
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Success Celebration Cake
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Commemorate academic excellence with our custom graduation cakes. 
+                    Personalized with your school colors and graduation theme.
+                  </p>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/gallery/Graduations/grad1.jpeg"
+                    alt="Graduation Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    3/7
+                  </div>
+                </div>
+              </div>
+            </div>,
+            <div key="featured-4" className="relative bg-gradient-to-br from-red/10 to-orange/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-red text-sm font-semibold uppercase tracking-wider mb-2">
+                    Anniversary Romance
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Valentine's Special
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Heart-shaped red velvet with cream cheese frosting and rose petals. 
+                    The perfect way to celebrate your love and special moments together.
+                  </p>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/gallery/Monthly/feb.jpg"
+                    alt="Anniversary Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    4/7
+                  </div>
+                </div>
+              </div>
+            </div>,
+            <div key="featured-5" className="relative bg-gradient-to-br from-green/10 to-emerald/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-green text-sm font-semibold uppercase tracking-wider mb-2">
+                    Kids Favorite
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Colorful Birthday Wonder
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Vibrant funfetti cake with rainbow frosting and sprinkles. 
+                    Guaranteed to bring smiles and make birthday wishes come true.
+                  </p>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/gallery/Birthdays/birth6.jpeg"
+                    alt="Kids Birthday Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    5/7
+                  </div>
+                </div>
+              </div>
+            </div>,
+            <div key="featured-6" className="relative bg-gradient-to-br from-yellow/10 to-amber/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-yellow text-sm font-semibold uppercase tracking-wider mb-2">
+                    Premium Selection
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Golden Anniversary
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Elegant golden anniversary cake with premium chocolate and caramel. 
+                    Sophisticated design for celebrating golden years together.
+                  </p>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/gallery/Birthdays/birth5.jpeg"
+                    alt="Anniversary Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    6/7
+                  </div>
+                </div>
+              </div>
+            </div>,
+            <div key="featured-7" className="relative bg-gradient-to-br from-indigo/10 to-purple/10 rounded-3xl p-8 md:p-12">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <div className="text-indigo text-sm font-semibold uppercase tracking-wider mb-2">
+                    Custom Creation
+                  </div>
+                  <h2 className="font-serif text-3xl md:text-4xl text-brown mb-4">
+                    Design Your Dream Cake
+                  </h2>
+                  <p className="text-brown/70 mb-6 leading-relaxed">
+                    Let your imagination run wild with our custom cake service. 
+                    Any theme, any design, any flavor - we bring your vision to life.
+                  </p>
+                  <Link 
+                    to="/order" 
+                    className="btn-primary"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+                <div className="relative">
+                  <img 
+                    src="/gallery/Birthdays/birth1.jpeg"
+                    alt="Custom Cake"
+                    className="w-full h-80 object-cover rounded-2xl shadow-luxury"
+                  />
+                  <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium text-brown">
+                    7/7
+                  </div>
+                </div>
+              </div>
+            </div>,
           ]}
         />
       </div>
