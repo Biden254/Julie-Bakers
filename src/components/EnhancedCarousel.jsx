@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 
-const EnhancedCarousel = ({ items, autoSlideInterval = 5000 }) => {
+const EnhancedCarousel = ({ items, autoSlideInterval = 2000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const touchStartX = useRef(0)

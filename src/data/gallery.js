@@ -103,7 +103,43 @@ export const galleryItems = [
     title: "Scholar's Graduation Cake",
     eventType: "graduation",
     shortDescription: "Celebrate the achievement with our elegant, custom-designed graduation cake, perfect for a dectorate celebration."
+  },
+  {
+    id: 16,
+    image: "/gallery/Anniversaries/ann1.jpeg",
+    title: "SDA Anniversary Celebration",
+    eventType: "anniversary",
+    shortDescription: "Custom light blue featuring SDA logo and anniversary theme."
+  },
+  {
+    id: 17,
+    image: "/gallery/Anniversaries/ann3.jpeg",
+    title: "Elegant Retirement Celebration",
+    eventType: "anniversary",
+    shortDescription: "Elegant white cake celebrating happy retirement for beloved parents."
+  },
+  {
+    id: 18,
+    image: "/gallery/Anniversaries/ann2.jpeg",
+    title: "Mustard Finch Baby Sneaker Cakes",
+    eventType: "anniversary",
+    shortDescription: "Custom baby sneaker cakes with cartoons character cutouts, perfect for a celebration."
+  },
+  {
+    id: 19,
+    image: "/gallery/Birthdays/birth9.jpeg",
+    title: "Creative Birthday Cake",
+    eventType: "birthday",
+    shortDescription: "A purple birthday cake decorated with butterflies and yellow and blue swirls."
+  },
+  {
+    id: 20,
+    image: "/gallery/Birthdays/birth10.jpeg",
+    title: "Custom Birthday Cake",
+    eventType: "birthday",
+    shortDescription: "A custom-designed birthday cake with personalized decorations."
   }
+
 ]
 
 export const eventTypes = {
