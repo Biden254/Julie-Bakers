@@ -9,7 +9,7 @@ import EnhancedCarousel from '../components/EnhancedCarousel'
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-cream overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brown/90 to-brown/70 z-10"></div>
@@ -24,7 +24,7 @@ const Home = () => {
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
             Welcome to
             <br />
-            <span className="text-gold">Julie Bakers</span>
+            <span className="text-gold italic font-light tracking-wide">Julie Bakers</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-light opacity-90">
             Discover and experience fine selection of artisanal cakes
