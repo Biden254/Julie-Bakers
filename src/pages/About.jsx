@@ -2,7 +2,7 @@ import Footer from '../components/Footer'
 
 const About = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative h-96 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brown/90 to-brown/70 z-10"></div>

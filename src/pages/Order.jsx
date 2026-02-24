@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { cakes } from '../data/cakes'
+import { useSearchParams, Link } from 'react-router-dom'
+import { galleryItems } from '../data/gallery'
 import { cakeCategories } from '../data/cakeCategories'
 import { flavors } from '../data/flavors'
-import { generateWhatsAppMessage } from '../utils/generateWhatsAppMessage'
+import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const Order = () => {
@@ -29,12 +29,12 @@ const Order = () => {
 
   // Calculate estimated price based on flavor and weight
   const getEstimatedPrice = () => {
-    if (!formData.flavor || !formData.weightInKg) return null
+    if (!formData.flavor || !formData.size) return null
     
     const selectedFlavor = flavors.find(f => f.name === formData.flavor)
     if (!selectedFlavor) return null
     
-    const weight = parseFloat(formData.weightInKg)
+    const weight = parseFloat(formData.size)
     if (isNaN(weight) || weight <= 0) return null
     
     return selectedFlavor.pricePerKg * weight
@@ -43,16 +43,23 @@ const Order = () => {
   useEffect(() => {
     const cakeId = searchParams.get('cake')
     if (cakeId) {
-      const cake = cakes.find(c => c.id === parseInt(cakeId))
+      const cake = galleryItems.find(item => item.id === parseInt(cakeId))
       if (cake) {
         setSelectedCake(cake)
-        const category = cakeCategories.find(cat => cat.id === cake.category)
+        // Find the category based on event type
+        const category = cakeCategories.find(cat => cat.id === cake.eventType)
         setSelectedCategory(category)
+        
+        // Calculate base price from weight and flavor
+        const basePrice = (cake.weightInKg || 2) * 1800 // Default price calculation
+        
         setFormData(prev => ({
           ...prev,
-          cakeName: cake.name,
+          cakeName: cake.title,
           category: category.name,
-          price: cake.price
+          price: basePrice,
+          size: (cake.weightInKg || 2) + ' kg',
+          flavor: cake.flavor || 'Vanilla' // Default flavor
         }))
       }
     }
@@ -68,7 +75,7 @@ const Order = () => {
       case 1:
         return formData.customerName && formData.customerPhone
       case 2:
-        return formData.size && formData.flavor && formData.weightInKg
+        return formData.size && formData.flavor
       case 3:
         return formData.dateNeeded && (formData.deliveryType === 'pickup' || formData.address)
       default:
@@ -99,7 +106,7 @@ const Order = () => {
   ]
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 overflow-x-hidden">
       <div className="max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -173,7 +180,7 @@ const Order = () => {
                 <div className="bg-beige/30 p-4 rounded-xl">
                   <p className="text-brown/70">Selected Cake:</p>
                   <p className="font-semibold text-brown">{formData.cakeName}</p>
-                  <p className="text-brown/60">KES {formData.price?.toLocaleString() || '0'}</p>
+                  <p className="text-brown/60">KES {getEstimatedPrice()?.toLocaleString() || '0'}</p>
                 </div>
               )}
 
@@ -202,7 +209,7 @@ const Order = () => {
                 <>
                   <div>
                   <div>
-                    <label className="block text-brown font-medium mb-2">Size *</label>
+                    <label className="block text-brown font-medium mb-2">Weight *</label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {selectedCategory.sizes.map(size => (
                         <button
@@ -241,20 +248,6 @@ const Order = () => {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-brown font-medium mb-2">Weight (kg) *</label>
-                    <input
-                      type="number"
-                      name="weightInKg"
-                      value={formData.weightInKg}
-                      onChange={handleInputChange}
-                      step="0.1"
-                      min="0.5"
-                      max="10"
-                      className="w-full px-4 py-3 border border-brown/20 rounded-xl focus:outline-none focus:border-brown transition-colors"
-                      placeholder="Enter weight in kilograms"
-                    />
-                  </div>
 
                   {/* Estimated Price Display */}
                   {getEstimatedPrice() && (
@@ -422,7 +415,7 @@ const Order = () => {
                 
                 <div className="pt-4 border-t border-brown/20">
                   <span className="text-brown/70">Total Price:</span>
-                  <p className="text-2xl font-bold text-brown">KES {formData.price?.toLocaleString() || '0'}</p>
+                  <p className="text-2xl font-bold text-brown">KES {getEstimatedPrice()?.toLocaleString() || formData.price?.toLocaleString() || '0'}</p>
                 </div>
               </div>
             </div>
