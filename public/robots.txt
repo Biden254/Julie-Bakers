@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://julie-bakers.vercel.app/sitemap.xml
+
+# Allow all important directories
+Allow: /gallery/
+Allow: /src/
+Allow: /public/
+
+# Block non-essential files if any
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/main.jsx
+
+# Crawl delay (optional, helps prevent overloading)
+Crawl-delay: 1

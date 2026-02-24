@@ -8,43 +8,119 @@ import MonthlySpecialSection from '../components/MonthlySpecialSection'
 import EnhancedCarousel from '../components/EnhancedCarousel'
 
 const Home = () => {
+  // Structured data for Home page
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Julie Bakers",
+    "description": "Custom cakes for all occasions in Nairobi, Kenya. Specializing in birthday cakes, wedding cakes, anniversary cakes, and graduation cakes.",
+    "url": "https://julie-bakers.vercel.app/",
+    "telephone": "+254716866107",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressRegion": "Nairobi County",
+      "addressCountry": "Kenya"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-1.2921",
+      "longitude": "36.8219"
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "sameAs": [
+      "https://www.instagram.com/julie_bakers",
+      "https://www.facebook.com/julie_bakers"
+    ],
+    "areaServed": "Nairobi",
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cake Catalog",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Birthday Cakes",
+            "description": "Custom birthday cakes for celebrations"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Wedding Cakes",
+            "description": "Elegant wedding cakes for special occasions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product", 
+            "name": "Anniversary Cakes",
+            "description": "Romantic anniversary cakes for couples"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Graduation Cakes", 
+            "description": "Celebration cakes for graduates"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-cream overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brown/90 to-brown/70 z-10"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1920&h=1080&fit=crop)'
-          }}
-        ></div>
-        
-        <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
-            Welcome to
-            <br />
-            <span className="text-gold italic font-light tracking-wide">Julie Bakers</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 font-light opacity-90">
-            Discover and experience fine selection of artisanal cakes
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <>
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+      
+      <div className="min-h-screen bg-cream overflow-x-hidden">
+        {/* Hero Section */}
+        <header className="relative h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-brown/90 to-brown/70 z-10"></div>
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1920&h=1080&fit=crop)'
+            }}
+            role="img"
+            aria-label="Julie Bakers custom cakes background"
+          ></div>
+          
+          <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
+              Welcome to
+              <br />
+              <span className="text-gold italic font-light tracking-wide">Julie Bakers</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 font-light opacity-90">
+              Discover and experience fine selection of artisanal cakes
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/catalog" 
+                className="bg-white text-brown px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-luxury"
+                aria-label="Explore our cake catalog"
+              >
+                Explore Cakes
+              </Link>
             <Link 
-              to="/catalog" 
-              className="bg-white text-brown px-8 py-4 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-luxury"
-            >
-              Explore Cakes
-            </Link>
-            <Link 
-              to="/order" 
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brown transition-all duration-300"
-            >
-              Order Now
-            </Link>
+                to="/order" 
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-brown transition-all duration-300"
+                aria-label="Order custom cake now"
+              >
+                Order Now
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </header>
 
       {/* Featured Section */}
       <section className="py-20 bg-beige">
@@ -473,6 +549,7 @@ const Home = () => {
       {/* Footer */}
       <Footer />
     </div>
+    </>
   )
 }
 
